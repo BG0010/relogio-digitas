@@ -1,48 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Silkscreen&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Silkscreen', sans-serif;
-}
-
-body {
-    height: 100vh;
-    background-color: #415a77;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.relogio {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 200px;
-    width: 550px;
-    background: #778da9;
-    border-radius: 2rem;
-}
-
-.relogio div {
-    height: 170px;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    background-color: #1b263b;
-    border-radius: 1rem;
-    letter-spacing: 3px;
-}
-
-.relogio span {
-    font-size: 60px;
-    font-weight: bolder;
-}
-
-.relogio span.tempo {
-    font-size: 20px;
-}
+   
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Silkscreen', sans-serif;
+    }
+    
+    body {
+        height: 100vh;
+        background-color: #415a77;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .relogio {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        max-width: 550px;
+        width: 90%; /* Ajustado para ocupar 90% da largura do dispositivo */
+        background: #778da9;
+        border-radius: 2rem;
+    }
+    
+    .relogio div {
+        flex: 0 0 calc(50% - 20px); /* Div ocupará 50% do container com algum espaçamento */
+        margin: 10px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: #1b263b;
+        border-radius: 1rem;
+        letter-spacing: 3px;
+    }
+    
+    .relogio span {
+        font-size: 40px; /* Reduzindo o tamanho da fonte para dispositivos móveis */
+        font-weight: bolder;
+    }
+    
+    .relogio span.tempo {
+        font-size: 14px; /* Reduzindo o tamanho da fonte para dispositivos móveis */
+    }
+    
+    /* Consulta de mídia para dispositivos móveis com largura máxima de 375px */
+    @media screen and (max-width: 375px) {
+        .relogio {
+            max-width: 300px; /* Ajuste de largura para telas menores */
+        }
+    
+        .relogio div {
+            flex: 0 0 calc(100% - 20px); /* Div ocupará 100% da largura com algum espaçamento */
+            margin: 10px 0;
+        }
+    
+        .relogio span {
+            font-size: 30px; /* Ajuste de tamanho de fonte para dispositivos móveis */
+        }
+    
+        .relogio span.tempo {
+            font-size: 12px; /* Ajuste de tamanho de fonte para dispositivos móveis */
+        }
+    }
+    
